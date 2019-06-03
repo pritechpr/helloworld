@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using iTrellis.HelloWorld.WebApi.Controllers;
+using iTrellis.HelloWorld.WebAPI.Controllers;
 
 namespace Tests
 {

@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace iTrellis.HelloWorld.WebApi
+namespace iTrellis.HelloWorld.WebAPI
 {
     public class Startup
     {
@@ -52,6 +52,8 @@ namespace iTrellis.HelloWorld.WebApi
             }
 
             app.UseHttpsRedirection();
+	    app.UseStaticFiles();
+            app.UseCookiePolicy();
             app.UseMvc();
         }
     }

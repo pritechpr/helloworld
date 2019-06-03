@@ -1,0 +1,28 @@
+FROM microsoft/dotnet:2.2-sdk AS build
+WORKDIR /app
+
+EXPOSE 3000 5000 5001 44300 56084
+
+COPY ./*.sln .
+COPY HelloWorld.WebAPI/*.csproj ./HelloWorld.WebAPI/
+COPY HelloWorld.WebAPI/. ./HelloWorld.WebAPI/
+
+#RUN dotnet dev-certs https --clean
+#RUN dotnet dev-certs https -ep /root/.aspnet/https/HelloWorld.WebAPI.pfx -p P@ssw0rd
+
+#COPY utils/HelloWorld.WebAPI.pfx /root/.aspnet/https/
+
+WORKDIR /app/HelloWorld.WebAPI
+RUN dotnet restore
+RUN dotnet publish -c Release -o out
+
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+WORKDIR /app
+
+ENV ASPNETCORE_URLS http://*:5000;https://*:5001
+
+EXPOSE 3000 5000 5001 44300 56084
+
+COPY --from=build /app/HelloWorld.WebAPI/out ./
+ENTRYPOINT ["dotnet", "HelloWorld.WebAPI.dll"]
+

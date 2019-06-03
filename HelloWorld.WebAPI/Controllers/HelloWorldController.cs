@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
-namespace iTrellis.HelloWorld.WebApi.Controllers
+namespace iTrellis.HelloWorld.WebAPI.Controllers
 {
     [Route("api")]
     [ApiController]

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace iTrellis.HelloWorld.WebApi
+namespace iTrellis.HelloWorld.WebAPI
 {
     public class Program
     {
