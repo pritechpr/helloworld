@@ -1,0 +1,13 @@
+---
+- hosts: VPS
+  user: root
+
+  tasks:
+    - name: Clone git repository
+      git: >
+        dest=/opt/itrellis/helloworld
+        repo=https://github.com/pritechpr/helloworld-itrellis.git
+    - name: Run/restart docker compose
+      docker_service: >
+        project_src=/opt/itrellis/helloworld
+        restarted=yes

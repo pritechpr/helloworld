@@ -30,6 +30,11 @@
               package:
                 name: yum-utils
 
+            - name: install git
+              package:
+                name: git
+                state: latest
+
             - name: check if reboot is required
               shell: needs-restarting -r
               failed_when: false

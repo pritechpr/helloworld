@@ -28,7 +28,7 @@ services:
       - '44300:44300'
       - '56084:56084'
     volumes:
-      - /home/aberriosdavila/.aspnet/https/:/root/.aspnet/https/
+      - ${HOME}/.aspnet/https/:/root/.aspnet/https/
 
   helloworld-react:
     container_name: helloworld-react
