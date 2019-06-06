@@ -8,6 +8,11 @@
       - geerlingguy.pip
       - docker
   tasks:
+        - name: install git
+          package:
+            name: git
+            state: latest
+  
         - name: check packages for updates
           shell: yum list updates | awk 'f;/Updated Packages/{f=1;}' | awk '{ print $1 }'
           changed_when: updates.stdout_lines | length > 0
@@ -29,11 +34,6 @@
             - name: install yum-utils
               package:
                 name: yum-utils
-
-            - name: install git
-              package:
-                name: git
-                state: latest
 
             - name: check if reboot is required
               shell: needs-restarting -r
