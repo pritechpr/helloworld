@@ -1,5 +1,14 @@
-
 ## my vms/servers hosted in the cloud ##
-[vpshosts]
+[VPS]
+157.230.165.44
+216.158.228.99
+
+## Localhost
+[only_local]
+localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python"
+
+## ALL
+[VPS_local]
+localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python"
 157.230.165.44
 216.158.228.99

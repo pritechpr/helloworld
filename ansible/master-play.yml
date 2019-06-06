@@ -1,14 +1,12 @@
 ---
-- hosts: vpshosts
-
+- hosts: VPS
+  remote_user: root
   vars:
     pip_install_packages:
       - name: docker
-
   roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
-      
+      - geerlingguy.pip
+      - docker
   tasks:
         - name: check packages for updates
           shell: yum list updates | awk 'f;/Updated Packages/{f=1;}' | awk '{ print $1 }'
@@ -56,5 +54,5 @@
             - name: reboot time
               debug:
                 msg: "The system rebooted in {{ reboot_result.elapsed }} seconds."
- 
+        
 

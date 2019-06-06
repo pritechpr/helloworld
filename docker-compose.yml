@@ -1,0 +1,55 @@
+version: '2'
+
+services:
+
+  helloworld-dotnet:
+    container_name: helloworld-dotnet
+    hostname: helloworld-dotnet
+    image: angelberrios/itrellis-helloworld-dotnet2.2:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORT=5000
+      - ASPNETCORE_HTTPS_PORT=5001
+      - ASPNETCORE_URLS=https://*:5001;http://*:5000
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/HelloWorld.WebAPI.pfx
+      - ASPNETCORE_Kestrel__Certificates__Development__Password=P1ssw0rd
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=P1ssw0rd
+#    mac_address: '8a:ca:58:b9:e9:51'
+    networks: 
+      - default
+    expose:
+      - '5000'
+      - '5001'
+      - '44300'
+      - '56084'
+    ports:
+      - '5000:5000'
+      - '5001:5001'
+      - '44300:44300'
+      - '56084:56084'
+    volumes:
+      - /home/aberriosdavila/.aspnet/https/:/root/.aspnet/https/
+
+  helloworld-react:
+    container_name: helloworld-react
+    hostname: helloworld-react
+    image: angelberrios/itrellis-helloworld-react:latest
+    networks:
+      - default
+    build:
+      context: .
+      dockerfile: Dockerfile.react
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - './helloworld.webapp:/helloworld.webapp/app'
+      - '/helloworld.webapp/app/node_modules'
+
+networks:
+      default:
+ 
+
