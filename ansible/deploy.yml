@@ -8,6 +8,6 @@
         dest=/opt/itrellis/helloworld
         repo=https://github.com/pritechpr/helloworld-itrellis.git
     - name: Run/restart docker compose
-      docker_service: >
+      docker_compose: >
         project_src=/opt/itrellis/helloworld
         restarted=yes

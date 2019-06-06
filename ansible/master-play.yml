@@ -4,6 +4,7 @@
   vars:
     pip_install_packages:
       - name: docker
+      - name: docker-compose
   roles:
       - geerlingguy.pip
       - docker
@@ -12,6 +13,16 @@
           package:
             name: git
             state: latest
+
+        - name: Clone git repository
+          git: >
+            dest=/opt/itrellis/helloworld
+            repo=https://github.com/pritechpr/helloworld-itrellis.git
+
+        - name: Run/restart docker compose
+          docker_compose: >
+            project_src=/opt/itrellis/helloworld
+            restarted=yes
   
         - name: check packages for updates
           shell: yum list updates | awk 'f;/Updated Packages/{f=1;}' | awk '{ print $1 }'
