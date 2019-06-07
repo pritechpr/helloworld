@@ -8,13 +8,11 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY helloworld.webapp/. .
+COPY helloworld.webapp/package*.json ./ 
+#COPY helloworld.webapp/. .
 
-RUN npm run build
-
-RUN npm install --save-dev typescript react-scripts@3.0.1 -g 
+RUN npm install 
 
 EXPOSE 3000
 
-# start app
 CMD ["npm", "start"]
