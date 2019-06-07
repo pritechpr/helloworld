@@ -8,8 +8,8 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY helloworld.webapp/package*.json ./ 
-#COPY helloworld.webapp/. .
+#COPY helloworld.webapp/package*.json ./ 
+COPY helloworld.webapp/. .
 
 RUN npm ci 
 
