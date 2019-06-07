@@ -11,7 +11,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY helloworld.webapp/package*.json ./ 
 #COPY helloworld.webapp/. .
 
-RUN npm install 
+RUN npm install --save-dev typescript react-scripts@3.0.1 
 
 EXPOSE 3000
 

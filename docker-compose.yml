@@ -31,7 +31,8 @@ services:
       - default
     build:
       context: .
-      dockerfile: Dockerfile.dotnet 
+      dockerfile: Dockerfile.dotnet
+      tag: helloworld-dotnet 
     expose:
       - '5000'
       - '5001'
@@ -61,6 +62,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.react
+      tag: helloworld-react
     expose:
       - '3000'
     ports:
