@@ -1,11 +1,23 @@
+#######
+#
+### Compose: iTrellis Hello World
+#
+#######
+
 version: '2'
 
 services:
 
+#######
+#
+## helloworld - dotnet
+#
+#######
+
   helloworld-dotnet:
     container_name: helloworld-dotnet
     hostname: helloworld-dotnet
-    image: angelberrios/itrellis-helloworld-dotnet2.2:latest
+    #image: angelberrios/itrellis-helloworld-dotnet2.2:latest
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORT=5000
@@ -33,10 +45,17 @@ services:
     volumes:
       - /opt/itrellis/helloworld/.aspnet/https/:/root/.aspnet/https/
 
+#######
+#
+## helloworld - react
+#
+#######
+
+
   helloworld-react:
     container_name: helloworld-react
     hostname: helloworld-react
-    image: angelberrios/itrellis-helloworld-react:latest
+    #image: angelberrios/itrellis-helloworld-react:latest
     networks:
       - default
     build:
