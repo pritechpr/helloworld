@@ -35,9 +35,6 @@ services:
     expose:
       - '44300'
       - '56084'
-    publish:
-      - '44300'
-      - '56084'
     volumes:
       - /opt/itrellis/helloworld/.aspnet/https/:/root/.aspnet/https/
 
