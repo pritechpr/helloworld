@@ -7,11 +7,6 @@ COPY ./*.sln .
 COPY HelloWorld.WebAPI/*.csproj ./HelloWorld.WebAPI/
 COPY HelloWorld.WebAPI/. ./HelloWorld.WebAPI/
 
-#RUN dotnet dev-certs https --clean
-#RUN dotnet dev-certs https -ep /root/.aspnet/https/HelloWorld.WebAPI.pfx -p P@ssw0rd
-
-#COPY utils/HelloWorld.WebAPI.pfx /root/.aspnet/https/
-
 WORKDIR /app/HelloWorld.WebAPI
 RUN dotnet restore
 RUN dotnet publish -c Release -o out

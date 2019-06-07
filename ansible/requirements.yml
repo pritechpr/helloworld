@@ -1,3 +1,4 @@
 # from galaxy
 - src: geerlingguy.docker
-- src: geerlingguy.pip 
+- src: geerlingguy.pip
+- src: nginxinc.nginx 

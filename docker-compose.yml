@@ -17,6 +17,9 @@ services:
 #    mac_address: '8a:ca:58:b9:e9:51'
     networks: 
       - default
+    build:
+      context: .
+      dockerfile: Dockerfile.dotnet 
     expose:
       - '5000'
       - '5001'
@@ -51,5 +54,4 @@ services:
 
 networks:
       default:
- 
 
