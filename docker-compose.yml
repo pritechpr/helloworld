@@ -32,7 +32,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dotnet
-      name: helloworld-dotnet 
     expose:
       - '5000'
       - '5001'
@@ -62,7 +61,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.react
-      name: helloworld-react
     expose:
       - '3000'
     ports:
