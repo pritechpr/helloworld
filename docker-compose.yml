@@ -16,8 +16,7 @@ services:
 
   helloworld-dotnet:
     container_name: helloworld-dotnet
-    hostname: helloworld-dotnet
-    #image: angelberrios/itrellis-helloworld-dotnet2.2:latest
+    hostname: helloworld-dotnet.you2service.com
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORT=56084
@@ -26,7 +25,6 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/HelloWorld.WebAPI.pfx
       - ASPNETCORE_Kestrel__Certificates__Development__Password=P1ssw0rd
       - ASPNETCORE_Kestrel__Certificates__Default__Password=P1ssw0rd
-#    mac_address: '8a:ca:58:b9:e9:51'
     networks: 
       - default
     build:
@@ -49,8 +47,7 @@ services:
 
   helloworld-react:
     container_name: helloworld-react
-    hostname: helloworld-react
-    #image: angelberrios/itrellis-helloworld-react:latest
+    hostname: helloworld-react.you2service.com
     networks:
       - default
     build:
