@@ -22,7 +22,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORT=56084
       - ASPNETCORE_HTTPS_PORT=44300
-      - ASPNETCORE_URLS=https://*:44300;http://*:56084
+      - ASPNETCORE_URLS=https://*:44300;http://*:56084;http://*:3000
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/HelloWorld.WebAPI.pfx
       - ASPNETCORE_Kestrel__Certificates__Development__Password=P1ssw0rd
       - ASPNETCORE_Kestrel__Certificates__Default__Password=P1ssw0rd
@@ -33,15 +33,10 @@ services:
       context: .
       dockerfile: Dockerfile.dotnet
     expose:
-<<<<<<< HEAD
       - '3000'
     ports:
       - '44300:44300'
       - '56084:56084'
-=======
-      - '44300'
-      - '56084'
->>>>>>> a7d4709529b56b1c81c14ae91f41108a701a3770
     volumes:
       - /opt/itrellis/helloworld/.aspnet/https/:/root/.aspnet/https/
 
