@@ -11,7 +11,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 #COPY helloworld.webapp/package*.json ./ 
 COPY helloworld.webapp/. .
 
-RUN PUBLIC_URL=http://helloworld-itrellis.you2service.com npm ci 
+RUN npm ci 
 
 EXPOSE 3000
 

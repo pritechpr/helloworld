@@ -54,7 +54,7 @@ namespace iTrellis.HelloWorld.WebAPI
                 app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 	    app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseMvc();

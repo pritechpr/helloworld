@@ -20,7 +20,7 @@ services:
 
   helloworld-dotnet:
     container_name: helloworld-dotnet
-    hostname: helloworld-dotnet.you2service.com
+    hostname: helloworld-dotnet
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORT=56084
@@ -51,7 +51,7 @@ services:
 
   helloworld-react:
     container_name: helloworld-react
-    hostname: helloworld-react.you2service.com
+    hostname: helloworld-react
     networks:
       - default
     build:
