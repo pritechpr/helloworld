@@ -1,7 +1,7 @@
 ---
 - hosts: VPS
   remote_user: root
-    vars:
+  vars:
     pip_install_packages:
       - name: docker
       - name: docker-compose
@@ -20,9 +20,6 @@
             frontend:
               location: /
               proxy_pass: http://frontend_react
-              #backend:
-              #location: /api
-              #proxy_pass: http://backend_dotnet
         upstreams:
           upstream_1:
             name: frontend_react
@@ -32,22 +29,10 @@
             sticky_cookie: false
             servers:
               frontend_server_1:
-                address: helloworld-react
+                address: localhost
                 port: 3000
                 weight: 1
                 health_check: max_fails=3 fail_timeout=5s
-            #upstream_2:
-            #name: backend_dotnet
-            #lb_method: least_conn
-            #zone_name: backend
-            #zone_size: 64k
-            #sticky_cookie: false
-            #servers:
-            #  backend_server_1:
-            #    address: helloworld-dotnet
-            #    port: 56084
-            #    weight: 1
-            #    health_check: max_fails=3 fail_timeout=5s
   roles:
       - geerlingguy.pip
       - docker
