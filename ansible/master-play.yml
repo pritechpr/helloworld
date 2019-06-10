@@ -12,7 +12,7 @@
         conf_file_name: default.conf
         conf_file_location: /etc/nginx/conf.d/
         port: 80
-        server_name: localhost
+        server_name: helloworld-itrellis.you2service.com
         error_page: /usr/share/nginx/html
         autoindex: false
         reverse_proxy:
