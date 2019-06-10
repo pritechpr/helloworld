@@ -7,6 +7,13 @@ This project consists of two parts, a .NET Core 2.2 Web API and a ReactJS web ap
 
 Ideally, we would like you to use some kind of CI/CD pipeline toolset. You can choose locally-installed or cloud-based, but you must provide us with whatever instructions are necessary to use local tools, or grant us access to your cloud-based pipeline. Bonus points for using a Kubernetes package manager such as Helm.
 
+## Howto
+
+1. Setup configuration parameters in configura.sh
+2. Execute in a terminal at the repository root: source configura.sh
+3. Install ansible in your workstation and run: ansible-playbook -u root -i inventory master-play.yml
+4. You should now be able to call the DNS name set on the first step and get the Hello-World message.
+
 ## HelloWorld.WebAPI
 This is a .NET Core 2.2 Web API - nothing special. Restore all NuGet packages to the solution, F5, and you should be off to the races.
 
