@@ -48,7 +48,6 @@ services:
 #
 #######
 
-
   helloworld-react:
     container_name: helloworld-react
     hostname: helloworld-react.you2service.com
@@ -69,4 +68,3 @@ services:
 
 networks:
       default:
- 
