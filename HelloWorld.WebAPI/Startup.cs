@@ -32,7 +32,10 @@ namespace iTrellis.HelloWorld.WebAPI
             {
                 options.AddPolicy(AllowLocalHostPort3000, builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000");
+                    //var allowedDomains = new []{"http://helloworld-itrellis.you2service.com:3000","http://localhost:3000","http://helloworld-itrellis.you2service.com"};
+
+                    //builder.WithOrigins(allowedDomains);
+		    builder.AllowAnyOrigin();
                 });
             });
         }
@@ -51,7 +54,7 @@ namespace iTrellis.HelloWorld.WebAPI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 	    app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseMvc();
