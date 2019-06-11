@@ -12,7 +12,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        return fetch(`https://localhost:44300/api/helloworld`)
+        return fetch(`https://helloworld-itrellis.you2service.com:44300/api/helloworld`)
             .then((response) => response.text())
             .then((responseBody) => {
                 this.setState({
