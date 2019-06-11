@@ -7,10 +7,14 @@
 ./ansible/ansible-galaxy install -r requirements.yml
 
 #
-# BUILD
+# BUILD - PUBLIC_URL
 #
 
-HOST=helloworld-itrellis
-DOMAIN=you2service.com
+#HOST=<<setup your public URL here>>
+HOST=helloworld-itrellis.you2service.com
+
+#
+# change build 
+#
 
 
