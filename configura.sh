@@ -33,3 +33,6 @@ git checkout f666682 -- "$CONF_FILE"
 
 sed -i "s/localhost/$PUBLIC_HOST/g" "$CONF_FILE" 
 
+cd ansible
+
+ansible-playbook -u root -i inventory master-play.yml
