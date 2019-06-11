@@ -9,10 +9,11 @@ Ideally, we would like you to use some kind of CI/CD pipeline toolset. You can c
 
 ## Howto
 
-1. Setup configuration parameters in configura.sh
-2. Execute in a terminal at the repository root path: source configura.sh
-3. Install ansible in your workstation and set keys in your inventories and run: ansible-playbook -u root -i inventory master-play.yml
-4. You should now be able to call the DNS name set on the first step and get the Hello-World message.
+1. Clone the repository
+2. Setup configuration parameters in configura.sh
+3. Install ansible in your servers/workstations and set SSH keys and your inventory file at: ansible/inventory
+4. At repository root execute: source configura.sh
+5. Once the playbook finishes type the DNS name set on the first step in your browser and you should get the Hello-World message.
 
 ## HelloWorld.WebAPI
 This is a .NET Core 2.2 Web API - nothing special. Restore all NuGet packages to the solution, F5, and you should be off to the races.
