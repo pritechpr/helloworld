@@ -1,20 +1,35 @@
 #!/bin/bash
 
 #
+# Sanity checks
+#
+
+
+
+#
+# Conf files
+#
+
+CONF_FILE=("helloworld.webapp/src/App.js")
+
+#
 # Ansible
 #
 
-./ansible/ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r ansible/requirements.yml
 
 #
 # BUILD - PUBLIC_URL
 #
 
-#HOST=<<setup your public URL here>>
-HOST=helloworld-itrellis.you2service.com
+PUBLIC_HOST=helloworld-itrellis.you2service.com
+#PUBLIC_HOST=localhost
 
 #
-# change build 
+# change Public Build 
 #
 
+git checkout f666682 -- "$CONF_FILE"
+
+sed -i "s/localhost/$PUBLIC_HOST/g" "$CONF_FILE" 
 
